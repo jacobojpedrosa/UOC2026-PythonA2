@@ -10,3 +10,16 @@ En esta kata, se solicita al usuario un numero, si este es:
 # 1. Crear un repositorio en GitHub (FizzBuzz Excepciones) -> enviar por chat la url
 # 2. Primera implementación del problema
 # 3. Retro
+
+
+def fizzbuzz(n) -> str:
+    """
+    - Divisible entre 3, el programa debe devuelve "Fizz"
+    - Divisible entre 5, el programa debe devuelve "Buzz"
+    - Divisible entre 3 y entre 5, el programa debe devuelve "FizzBuzz"
+    - Si no es divisible ni entre 3 ni entre 5, debe devuelve el número
+    """
+    return 5
+
+
+print(fizzbuzz(3))

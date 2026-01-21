@@ -19,7 +19,7 @@ def division(num1,num2):
 #     return resultado
 
 def multiplicar(args):
-
+    pass
 
 
 if __name__ == "__main__":
