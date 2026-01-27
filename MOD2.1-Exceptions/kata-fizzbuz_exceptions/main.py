@@ -12,6 +12,7 @@ En esta kata, se solicita al usuario un numero, si este es:
 # 3. Retro
 
 
+<<<<<<< HEAD
 def fizzbuzz(n) -> str:
     """
     - Divisible entre 3, el programa debe devuelve "Fizz"
@@ -23,3 +24,20 @@ def fizzbuzz(n) -> str:
 
 
 print(fizzbuzz(3))
+=======
+
+# Iteración 2:
+# 1. Definir y crear al menos 10 tests para ser ejecutados con Pytest. 
+# Estos tests no deben ser funcionales en esta iteración.
+# 3. Retro
+
+
+# Iteración 3:
+# 1. Modificar el código base del proyecto con una function FizzBuzz(n) que reciba un 
+# numero "n" y retorne Fizz o Buzz o FizzBuzz o el numero según la lógica ya definida.
+# 2. Editar uno o varios tests para confirmar que se ejecutan y validan el problema
+# 3. Retro
+
+# Iteración 4:
+# 1. Finalizar la lógica de los tests definidos y validar todo el proyecto
+>>>>>>> 19f2c89128210024e9004049d9ef7317c7997aa1
