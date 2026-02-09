@@ -10,7 +10,7 @@
 
 # condiciones victoria o derrota
 # El primer pokemon que se queda a vvida <= 0 pierde
-from models.pokemon import Movimiento, Pikachu
+from models.pokemon import Movimiento, Charizard
 
 # p1 = Pokemon("Sergio", "Bravo", 10000, 100, 20, 500, 99)
 
@@ -24,5 +24,5 @@ from models.pokemon import Movimiento, Pikachu
 # p1.movimientos(movimientos)
 
 
-pika = Pikachu(100, 100, 100, 100, 100)
-print(pika)
+cha = Charizard(100, 100, 100, 100, 100)
+print(cha)

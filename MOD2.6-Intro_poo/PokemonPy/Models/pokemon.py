@@ -21,7 +21,7 @@ class Movimiento:
 class Pokemon:
     """Clase que representa un Pokemon con sus atributos y métodos de combate"""
     
-    def __init__(self, nombre, tipo, nivel, vida, fuerza, defensa, velocidad):
+    def __init__(self, nivel, vida, fuerza, defensa, velocidad):
         """
         Constructor de la clase Pokemon
         
@@ -34,8 +34,7 @@ class Pokemon:
             defensa (int): Puntos de defensa (Max 18)
             velocidad (int): Puntos de velocidad (Max 100)
         """
-        self.nombre = nombre
-        self.tipo = tipo
+        # self.nombre = nombre
         self.nivel = nivel
         
         # Validar y asignar vida (100-300)
@@ -68,6 +67,9 @@ class Pokemon:
         
         # Lista de movimientos (máximo 4) - Atributo privado
         self.__movimientos = []
+
+    def tipos(self):
+        return []
     
 
     @property
@@ -100,7 +102,7 @@ class Pokemon:
             raise Exception("Deberian haber 4 movimientos algo falla")
 
     def add_movimiento(self, movimiento, index):
-        if movimiento.tipo == self.tipo:
+        if movimiento.tipo in self.tipos():
             self.__movimientos[index] = movimiento
         else:
             raise Exception("El tipo de movimiento no es correcto")
@@ -179,39 +181,29 @@ class Pokemon:
         estado = "Vivo" if self.esta_vivo() else "Debilitado"
         
         return f"""
-Pokemon: {self.nombre}
-Tipo: {self.tipo}
-Nivel: {self.nivel}
-Vida: {self.vida}/{self.vida_maxima}
-Fuerza: {self.fuerza}
-Defensa: {self.defensa}
-Velocidad: {self.velocidad}
-Movimientos: {movimientos_str}
-Estado: {estado}
-"""
-
-    def store(self):
-        p = {
-            "nombre":self.nombre
-
-        }
-        # persistencia.store(p)
+            Pokemon: {self.nombre}
+            Tipo: {self.tipos()}
+            Nivel: {self.nivel}
+            Vida: {self.vida}/{self.vida_maxima}
+            Fuerza: {self.fuerza}
+            Defensa: {self.defensa}
+            Velocidad: {self.velocidad}
+            Movimientos: {movimientos_str}
+            Estado: {estado}
+            """
 
 
-class PokemonElectrico(Pokemon):
-    def __init__(self, nombre, nivel, vida, fuerza, defensa, velocidad):
-        super().__init__(nombre, "electrico", nivel, vida, fuerza, defensa, velocidad)
-    
+class PokemonVolador(Pokemon):
+    def tipos(self):
+        return super().tipos() + ["volador"]
 
 
-class PokemonNormal(Pokemon):
-    def __init__(self, nombre, nivel, vida, fuerza, defensa, velocidad):
-        super().__init__(nombre, "normal", nivel, vida, fuerza, defensa, velocidad)
+class PokemonFuego(Pokemon):
+    def tipos(self):
+        return super().tipos() + ["fuego"]
 
 
-class Pikachu(PokemonElectrico, PokemonNormal):
+class Charizard(PokemonVolador, PokemonFuego):
     def __init__(self, nivel, vida, fuerza, defensa, velocidad):
-        print( nivel, vida, fuerza, defensa, velocidad)
-        # super().__init__("Pikachu", nivel, vida, fuerza, defensa, velocidad)
-
-    
+        self.nombre = "Charizard"
+        super().__init__(nivel, vida, fuerza, defensa, velocidad)
